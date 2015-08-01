@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Daveloper87/surf-map.git"
+  },
   "author": "Daveloper87 <dle.williams1@gmail.com> (http://www.daio.io)",
   "license": "ISC",
   "dependencies": {
