@@ -13,6 +13,7 @@
   "author": "Daveloper87 <me@daio.io> (http://daio.io)",
   "license": "ISC",
   "dependencies": {
-    "koa": "^0.21.0"
+    "koa": "^0.21.0",
+    "koa-router": "^5.1.2"
   }
 }
