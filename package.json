@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git@github.com:Daveloper87/surf-map.git"
   },
-  "author": "Daveloper87 <dle.williams1@gmail.com> (http://www.daio.io)",
+  "author": "Daveloper87 <me@daio.io> (http://daio.io)",
   "license": "ISC",
   "dependencies": {
     "koa": "^0.21.0"
