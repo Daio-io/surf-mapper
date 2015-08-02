@@ -16,5 +16,9 @@
     "koa": "^0.21.0",
     "koa-handlebars": "^0.5.7",
     "koa-router": "^5.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-webpack": "^1.5.0"
   }
 }
