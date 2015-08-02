@@ -6,5 +6,5 @@ node_modules
 *.logs
 *.log
 
-# WEBAPP
-webapp/dist
+# BUILDS
+static/dist
