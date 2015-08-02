@@ -1,13 +1,13 @@
 'use strict';
 
-
 module.exports = function() {
+  
   function initialize() {
-    var mapOptions = {
+    let mapOptions = {
       center: { lat: 51.477427, lng: -3.693906},
       zoom: 8
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
+    let map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
   }
 
