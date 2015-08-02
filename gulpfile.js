@@ -1,10 +1,12 @@
 'use strict';
 
 const gulp = require('gulp');
-const webpack = require('gulp-webpack');
+const webpack = require('webpack-stream');
 
-gulp.task('default', function() {
+gulp.task('build', function() {
   return gulp.src('webapp/src/**/*.js')
-    .pipe(webpack())
-    .pipe(gulp.dest('webapp/dist/'));
+    .pipe(webpack({output: {filename: 'build.js'}}))
+    .pipe(gulp.dest('static/dist/js/'));
 });
+
+gulp.task('default', ['build'], function() {});
