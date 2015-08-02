@@ -2,4 +2,21 @@ html, body, #map-canvas {
     height: 100%;
     margin: 0;
     padding: 0;
+    z-index: 0;
+}
+
+#search-box {
+    z-index: 2;
+    position: absolute;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 10%;
+    height: 30px;
+    transition: all 0.2s linear;
+}
+
+#search-box:focus {
+    width: 40%;
+    text-align: left;
 }
