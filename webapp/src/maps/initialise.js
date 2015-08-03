@@ -1,8 +1,8 @@
 'use strict';
 
-const mapOptions = require('./map.options.js');
+import {mapOptions} from './map.options.js';
 
-module.exports = function() {
+export function initMap() {
 
   function initialize() {
     global.map = new google.maps.Map(document.getElementById('map-canvas'),

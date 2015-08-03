@@ -1,3 +1,6 @@
 'use strict';
 
-require('./maps/initialise')();
+import {initMap} from './maps/initialise';
+initMap();
+
+import './search/searchbar';
