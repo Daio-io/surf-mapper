@@ -1,21 +1,27 @@
 'use strict'
 
-class SearchBar extends React.Component {
+import {AutoComplete} from './autocomplete';
+
+export class SearchBar extends React.Component {
   constructor() {
     super();
+    this.state = {response:[]};
   }
 
   render() {
-    return <input type="text" id="search-box"></input>;
+    return (<div><input type="text" id="search-box"></input>
+      <AutoComplete list={this.state.response}/>
+  </div>);
   }
 
   componentDidMount() {
     let searchBox = document.getElementById('search-box');
-    searchBox.onkeydown = this.makeRequest;
+    searchBox.onkeydown = this.makeRequest.bind(this);
   }
   
   makeRequest(e) {
-    console.log('place holder for ajax');
+    let data = 'hello ' + Math.random();
+    this.setState({response: [data]});
   }
 
 }
