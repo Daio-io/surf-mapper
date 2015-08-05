@@ -5,18 +5,45 @@ html, body, #map-canvas {
     z-index: 0;
 }
 
-#search-box {
-    z-index: 2;
+#search-conatiner {
     position: absolute;
-    font-size: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-    width: 10%;
-    height: 30px;
-    transition: all 0.2s linear;
+    z-index: 1;
 }
 
-#search-box:focus {
-    width: 40%;
-    text-align: left;
+/* Typeahead.js autocomplete box styles */
+
+.tt-input,
+.tt-hint {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 30px;
+    border: 2px solid #7ac4cc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.tt-input {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #ffbd3d;
+}
+
+.tt-menu {
+    margin-top: 5px;
+    margin-left: 20px;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
 }
