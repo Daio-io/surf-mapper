@@ -8,5 +8,5 @@ export var prefs = {
 };
 
 function _mapData(data){
-  return {name: data.name, id: data.id}
+  return data.name + ' ' + data.id
 }
