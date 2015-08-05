@@ -6,7 +6,7 @@ const del = require('del');
 const minifyCss = require('gulp-minify-css');
 
 const webpackConf = {
-  output: {filename: 'build.js'},
+  output: {filename: 'bundle.js'},
   module: {
     loaders: [
       { loader: 'babel' }
@@ -29,7 +29,7 @@ gulp.task('minify-css', function() {
 
 // Clean out the dist folders
 gulp.task('clean', function() {
-  del(['static/dist/']);
+  del(['static/dist/css', 'static/dist/js']);
 });
 
 gulp.task('default', ['build'], function() {
