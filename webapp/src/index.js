@@ -1,8 +1,7 @@
 'use strict';
 
 import {initMap} from './maps/initialise';
-import {beaches} from './search/suggest';
+import {Suggest} from './search/suggest';
 
 initMap();
-beaches.clearPrefetchCache();
-beaches.initialize();
+Suggest.init();
