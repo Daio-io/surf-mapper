@@ -3,10 +3,10 @@
 export var prefs = {
   url: 'https://beach-suggest.herokuapp.com/beach?q=',
   filter: function(response) {
-    return response.map(_stringfyNameAndId)
+    return response.map(_mapData);
   }
 };
 
-function _stringfyNameAndId(data){
-  return data.name + ' ' + data.id;
+function _mapData(data){
+  return {name: data.name, id: data.id}
 }

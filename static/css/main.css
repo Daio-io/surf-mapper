@@ -46,4 +46,8 @@ html, body, #map-canvas {
     padding: 3px 20px;
     font-size: 18px;
     line-height: 24px;
+    cursor: pointer;
+}
+.tt-suggestion:hover {
+    color:  #009688;
 }

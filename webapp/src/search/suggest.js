@@ -7,13 +7,15 @@ export var Suggest = {
   init: function() {
 
     let beaches = new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      datumTokenizer: Bloodhound.tokenizers.whitespace('name'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
+      identify: function(obj) { return obj.name; },
       prefetch: prefs
     });
 
     _configueSearchBox(beaches);
-
+    beaches.initialize();
+    return beaches;
   }
 };
 
