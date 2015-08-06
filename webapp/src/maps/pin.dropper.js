@@ -11,8 +11,7 @@ export var PinDropper = {
     let infowindow = new google.maps.InfoWindow({
       content: data.surfcard
     });
-
-    let position = new google.maps.LatLng('53.4722454', '-2.2235922');
+    let position = new google.maps.LatLng(data.lat, data.lng);
 
     let marker = new google.maps.Marker({
       position: position,
