@@ -36,6 +36,7 @@ function _buildCardData(_locator, _surfData) {
 
   let data = {
     location: _locator[0].location,
+    webcamLink: _locator[0].webcam || null,
     swell: [],
     time: [],
     windspeed: []
