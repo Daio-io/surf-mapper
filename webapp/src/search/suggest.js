@@ -1,6 +1,7 @@
 'use strict';
 
 import {prefs} from './suggest.prefs.js';
+import {PinDropper} from '../maps/pin.dropper.js'
 
 export var Suggest = {
 
@@ -29,30 +30,19 @@ function _configueSearchBox(_beaches) {
       name: 'beaches',
       source: _beaches
     }).on('typeahead:selected typeahead:autocompleted', function(e, datum) {
-
-      // Test query adding marker - work to be refactored and moved into a module
-      let spotId = datum.match(/([0-9])\w+/g);
-      $.ajax({
-        url: 'surfcard/' + spotId
-      }).done(function(data) {
-
-        let infowindow = new google.maps.InfoWindow({
-          content: data.surfcard
-        });
-
-        let position = new google.maps.LatLng('53.4722454', '-2.2235922');
-
-        let marker = new google.maps.Marker({
-          position: position,
-          map: global.map,
-          animation: google.maps.Animation.DROP
-        });
-
-        global.map.panTo(marker.getPosition());
-        infowindow.open(global.map, marker);
-        
-      });
-
+      _requestSurfCard(datum);
     });
+}
+
+function _requestSurfCard(datum) {
+
+  let spotId = datum.match(/([0-9])\w+/g);
+  $.ajax({
+    url: 'surfcard/' + spotId
+  }).done(function(data) {
+
+    PinDropper.dropNewPin(data);
+
+  });
 
 }
