@@ -19,7 +19,8 @@
     "koa-handlebars": "^0.5.7",
     "koa-router": "^5.1.2",
     "koa-static": "^1.4.9",
-    "surfcards": "https://github.com/Daveloper87/surfcards.git"
+    "surfcards": "https://github.com/Daveloper87/surfcards.git",
+    "tooly": "https://github.com/Daveloper87/tooly.git"
   },
   "devDependencies": {
     "babel-core": "^5.8.20",
