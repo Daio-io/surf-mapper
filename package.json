@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@github.com:Daveloper87/surf-map.git"
   },
+  "engines": {
+    "iojs": "3.x.x"
+  },
   "author": "Daveloper87 <me@daio.io> (http://daio.io)",
   "license": "ISC",
   "dependencies": {
