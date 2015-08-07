@@ -36,13 +36,14 @@ function _buildCardData(_locator, _surfData) {
 
   let data = {
     location: _locator[0].location,
+    subheader: _surfData[0].date,
     webcamLink: _locator[0].webcam || null,
     swell: [],
     time: [],
     windspeed: []
   };
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     data.swell.push(_surfData[i].minSwell + '-' + _surfData[i].maxSwell);
     data.time.push(_surfData[i].time);
     data.windspeed.push(_surfData[i].wind);

@@ -14,7 +14,7 @@ module.exports = {
 
     return got('https://surf-query.herokuapp.com/?apikey=' +
       SURF_QUERY_KEY + '&spotid=' +
-      spotid + '&start=9&end=22').then(function(data) {
+      spotid + '&start=7&end=22').then(function(data) {
 
       return data.body;
 
