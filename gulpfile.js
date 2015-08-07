@@ -29,7 +29,7 @@ gulp.task('minify-css', function() {
 
 // Clean out the dist folders
 gulp.task('clean', function() {
-  del(['static/dist']);
+  del(['static/dist/js']);
 });
 
 gulp.task('default', ['build'], function() {
