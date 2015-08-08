@@ -41,7 +41,9 @@ function _requestSurfCard(datum) {
     url: 'surfcard/' + spotId
   }).done(function(data) {
 
-    PinDropper.dropNewPin(data);
+    if (data.status === 'success') {
+      PinDropper.dropNewPin(data.response);
+    }
 
   });
 

@@ -21,10 +21,13 @@ exports.getSurfCard = function *() {
   let spotid = this.params.spotid;
   if (tooly.existy(spotid)){
     
-    this.body = yield builder.buildResponse(spotid);
+    this.body = { status: "success",
+      response: yield builder.buildResponse(spotid)
+    }
     
   } else{
-    this.body = {status: fail, message: "Location does not exist"};
+    this.body = {status: "failed", 
+      response: "Location " + spotid + " does not exist"};
   }
 
 };
