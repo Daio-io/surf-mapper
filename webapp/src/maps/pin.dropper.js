@@ -13,9 +13,11 @@ export var PinDropper = {
     });
     let position = new google.maps.LatLng(data.lat, data.lng);
 
+    let icon = '/img/surfboard-icon.png';
     let marker = new google.maps.Marker({
       position: position,
       map: global.map,
+      icon: icon,
       animation: google.maps.Animation.DROP
     });
 
