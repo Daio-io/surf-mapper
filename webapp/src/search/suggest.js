@@ -32,6 +32,14 @@ function _configueSearchBox(_beaches) {
     }).on('typeahead:selected typeahead:autocompleted', function(e, datum) {
       _requestSurfCard(datum);
     });
+  
+  $('.tt-input').focus(function() {
+    $('.tt-hint').css('width', '150%');
+    $('.tt-input').css('width', '150%');
+  }).blur(function() {
+    $('.tt-hint').css('width', '50%');
+    $('.tt-input').css('width', '50%');
+  }).val("");
 }
 
 function _requestSurfCard(datum) {
@@ -42,6 +50,7 @@ function _requestSurfCard(datum) {
   }).done(function(data) {
 
     if (data.status === 'success') {
+      $('.tt-input').blur().val('');
       PinDropper.dropNewPin(data.response);
     }
 

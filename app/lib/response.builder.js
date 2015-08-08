@@ -13,7 +13,6 @@ module.exports = {
   buildResponse: function(spotid) {
 
     let cached = surfCache.get(spotid);
-    console.log(cached);
     if (tooly.existy(cached)) {
       return new Promise(function(resolve) {
         resolve(cached);
