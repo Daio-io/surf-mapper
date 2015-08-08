@@ -31,5 +31,6 @@ function _clearCurrentMarkers() {
   for (let marker of markers) {
     marker.setMap(null);
   }
+  markers = [];
 
 }
