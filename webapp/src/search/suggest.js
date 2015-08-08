@@ -36,7 +36,7 @@ function _configueSearchBox(_beaches) {
 
 function _requestSurfCard(datum) {
 
-  let spotId = datum.match(/([0-9])\w+/g);
+  let spotId = datum.match(/([0-9])\d*/g);
   $.ajax({
     url: 'surfcard/' + spotId
   }).done(function(data) {
