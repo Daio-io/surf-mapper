@@ -4,8 +4,7 @@ const locator = require('./locator.client');
 const surfdata = require('./surfdata.client');
 const surfcards = require('surfcards');
 const tooly = require('tooly');
-const NodeCache = require('node-cache');
-const surfCache = new NodeCache();
+
 const settings = require('../conf/app.settings');
 
 module.exports = {
