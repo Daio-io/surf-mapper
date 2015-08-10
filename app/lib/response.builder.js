@@ -4,14 +4,14 @@ const locator = require('./locator.client');
 const surfdata = require('./surfdata.client');
 const surfcards = require('surfcards');
 const tooly = require('tooly');
-
+const cardCache = require('./card.cache');
 const settings = require('../conf/app.settings');
 
 module.exports = {
 
   buildResponse: function(spotid) {
 
-    let cached = surfCache.get(spotid);
+    let cached = cardCache.getCachedCard(spotid);
     if (tooly.existy(cached)) {
       return new Promise(function(resolve) {
         resolve(cached);
@@ -32,7 +32,7 @@ module.exports = {
           lng: locator[0].longitude
         };
         
-        _cacheResponse(spotid, res);
+        cardCache.cacheCard(spotid, res);
         return res;
 
       })
@@ -61,10 +61,4 @@ function _buildCardData(_locator, _surfData) {
     data.windspeed.push(_surfData[i].wind);
   }
   return data;
-}
-
-function _cacheResponse(_spotId, _res) {
-
-  surfCache.set(_spotId, _res,  settings.response.cache);
-
 }
