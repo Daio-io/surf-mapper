@@ -30,9 +30,8 @@ export var PinDropper = {
 
 function _clearCurrentMarkers() {
 
-  for (let marker of markers) {
-    marker.setMap(null);
+  for (let i = 0; i < markers.length; i++){
+    markers[i].setMap(null);
   }
   markers = [];
-
 }
