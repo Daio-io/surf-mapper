@@ -1,8 +1,7 @@
 'use strict';
 
-const ENV = process.env.NODE_ENV;
 const ROOT = require('app-root-path');
-const enable = ENV === 'live';
+const enable = process.env.NODE_ENV === 'live';
 
 module.exports = Object.freeze({
   
