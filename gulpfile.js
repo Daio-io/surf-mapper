@@ -32,5 +32,11 @@ gulp.task('clean', function() {
   del(['static/dist/js']);
 });
 
+gulp.task('watch', function() {
+  gulp.watch('webapp/css/*.css', ['build']);
+  gulp.watch('webapp/src/**/*.js', ['build']);
+});
+
+
 gulp.task('default', ['build'], function() {
 });
