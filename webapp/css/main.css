@@ -10,6 +10,19 @@ html, body, #map-canvas {
     z-index: 1;
 }
 
+.footer-container {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    margin-left: 20px;
+}
+
+h2.footer-banner {
+    font-size: 50px;
+    font-family: sans-serif;
+    position: relative;
+}
+
 /* Typeahead.js autocomplete box styles */
 
 .tt-input,
