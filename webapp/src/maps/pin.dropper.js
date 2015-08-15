@@ -24,6 +24,7 @@ export var PinDropper = {
     markers.push(marker);
 
     global.map.panTo(marker.getPosition());
+    global.map.setZoom(9);
     infowindow.open(global.map, marker);
   }
 };
