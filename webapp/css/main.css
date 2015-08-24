@@ -6,6 +6,7 @@ html, body, #map-canvas {
 }
 
 #search-conatiner {
+    max-width: 90%;
     position: absolute;
     z-index: 1;
 }
@@ -18,7 +19,7 @@ html, body, #map-canvas {
 }
 
 h2.footer-banner {
-    font-size: 50px;
+    font-size: 1.4rem;
     font-family: sans-serif;
     position: relative;
 }
@@ -31,7 +32,7 @@ h2.footer-banner {
     margin-top: 20px;
     margin-left: 20px;
     padding: 8px 12px;
-    font-size: 24px;
+    font-size: 1.2rem;
     line-height: 30px;
     border: 2px solid #7ac4cc;
     border-radius: 8px;
@@ -63,7 +64,7 @@ h2.footer-banner {
 
 .tt-suggestion {
     padding: 3px 20px;
-    font-size: 18px;
+    font-size: 1.0rem;
     line-height: 24px;
     cursor: pointer;
 }

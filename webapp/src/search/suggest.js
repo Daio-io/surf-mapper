@@ -34,8 +34,8 @@ function _configueSearchBox(_beaches) {
     });
   
   $('.tt-input').focus(function() {
-    $('.tt-hint').css('width', '150%');
-    $('.tt-input').css('width', '150%');
+    $('.tt-hint').css('width', '90%');
+    $('.tt-input').css('width', '90%');
   }).blur(function() {
     $('.tt-hint').css('width', '50%');
     $('.tt-input').css('width', '50%');
