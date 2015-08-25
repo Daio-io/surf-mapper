@@ -32,14 +32,7 @@ function _configueSearchBox(_beaches) {
     }).on('typeahead:selected typeahead:autocompleted', function(e, datum) {
       _requestSurfCard(datum);
     });
-  
-  $('.tt-input').focus(function() {
-    $('.tt-hint').css('width', '90%');
-    $('.tt-input').css('width', '90%');
-  }).blur(function() {
-    $('.tt-hint').css('width', '50%');
-    $('.tt-input').css('width', '50%');
-  }).val("");
+
 }
 
 function _requestSurfCard(datum) {
