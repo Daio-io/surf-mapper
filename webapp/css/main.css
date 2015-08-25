@@ -42,8 +42,8 @@ h2.footer-banner {
     padding: 8px 12px;
     font-size: 1.2rem;
     line-height: 30px;
-    border: 2px solid #7ac4cc;
-    border-radius: 8px;
+    border: 2px solid #ffbd3d;
+    border-radius: 10px;
     outline: none;
 }
 
@@ -56,6 +56,7 @@ h2.footer-banner {
 }
 
 .tt-menu {
+    width: 100%;
     margin-top: 5px;
     margin-left: 20%;
     padding: 8px 0;
@@ -67,8 +68,8 @@ h2.footer-banner {
 
 .tt-suggestion {
     padding: 3px 20px;
-    font-size: 1.0rem;
-    line-height: 24px;
+    font-size: 1.2rem;
+    line-height: 30px;
     cursor: pointer;
 }
 
