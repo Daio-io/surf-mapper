@@ -37,6 +37,7 @@ function _configueSearchBox(_beaches) {
     let isVisible = $('.search-container').css('display');
     if (e.keyCode === 32 && isVisible === 'none') {
       $('.search-container').show();
+      $('.tt-input').focus();
     } else if (e.keyCode === 27 && isVisible !== 'none') {
       $('.search-container').hide();
     }
@@ -54,7 +55,6 @@ function _requestSurfCard(datum) {
     if (data.status === 'success') {
       $('.search-container').hide();
       PinDropper.dropNewPin(data.response);
-
     }
 
   });
