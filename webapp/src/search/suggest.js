@@ -33,6 +33,15 @@ function _configueSearchBox(_beaches) {
       _requestSurfCard(datum);
     });
 
+  $(window).keydown(function(e) {
+    let isVisible = $('.search-container').css('display');
+    if (e.keyCode === 32 && isVisible === 'none') {
+      $('.search-container').show();
+    } else if (e.keyCode === 27 && isVisible !== 'none') {
+      $('.search-container').hide();
+    }
+  });
+
 }
 
 function _requestSurfCard(datum) {
@@ -43,8 +52,9 @@ function _requestSurfCard(datum) {
   }).done(function(data) {
 
     if (data.status === 'success') {
-      $('.tt-input').blur().val('');
+      $('.search-container').hide();
       PinDropper.dropNewPin(data.response);
+
     }
 
   });
