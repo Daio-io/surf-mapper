@@ -8,7 +8,7 @@ exports.getHome = function *() {
 
   yield this.render('home',
     {
-      title: 'Surf-Map',
+      title: 'Surf Mapper',
       mapskey: mapsApiKey
     }
   );

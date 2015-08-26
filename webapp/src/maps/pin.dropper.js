@@ -1,7 +1,7 @@
 'use strict';
 
-let markers = [];
 const icon = '/img/surfboard-icon.png';
+let markers = [];
 
 export var PinDropper = {
 

@@ -1,6 +1,6 @@
 'use strict';
 
-export var prefs = {
+export const prefs = {
   url: 'https://beach-suggest.herokuapp.com/beach?q=',
   filter: function(response) {
     return response.map(_mapData);
