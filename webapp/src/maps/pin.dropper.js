@@ -3,6 +3,8 @@
 const icon = '/img/surfboard-icon.png';
 let markers = [];
 
+import {SearchBox} from '../search/searchbox.js';
+
 export var PinDropper = {
 
   dropNewPin: function(data) {
@@ -51,8 +53,7 @@ function _createInfoWindow(data){
   google.maps.event.addListener(infowindow,
     'closeclick', function() {
       _clearCurrentMarkers();
-      $('.search-container').show();
-      $('#search-box').focus().val('');
+      SearchBox.show();
     });
   
   return infowindow;

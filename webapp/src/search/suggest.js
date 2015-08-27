@@ -1,6 +1,7 @@
 'use strict';
 
 import {prefs} from './suggest.prefs.js';
+import {SearchBox} from './searchbox.js';
 import {PinDropper} from '../maps/pin.dropper.js'
 const searchBox = '#search-box';
 const searchContainer = '.search-container';
@@ -42,11 +43,9 @@ function _configueSearchBox(_beaches) {
   $(window).keydown(function(e) {
     let isVisible = $(searchContainer).css('display');
     if (e.keyCode === 32 && isVisible === 'none') {
-      $(searchContainer).show();
-      $(searchBox).focus().val('');
+      SearchBox.show();
     } else if (e.keyCode === 27 && isVisible !== 'none') {
-      $(searchContainer).hide();
-      $(searchBox).val('');
+      SearchBox.hide();
     }
   });
 
@@ -60,7 +59,7 @@ function _requestSurfCard(datum) {
   }).done(function(data) {
 
     if (data.status === 'success') {
-      $('.search-container').hide();
+      SearchBox.hide();
       PinDropper.dropNewPin(data.response);
     }
 
