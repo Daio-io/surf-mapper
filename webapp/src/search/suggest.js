@@ -2,6 +2,8 @@
 
 import {prefs} from './suggest.prefs.js';
 import {PinDropper} from '../maps/pin.dropper.js'
+const searchBox = '#search-box';
+const searchContainer = '.search-container';
 
 export var Suggest = {
 
@@ -21,7 +23,7 @@ export var Suggest = {
 
 function _configueSearchBox(_beaches) {
 
-  $('#search-box').typeahead({
+  $(searchBox).typeahead({
       hint: true,
       highlight: true,
       minLength: 1
@@ -33,13 +35,18 @@ function _configueSearchBox(_beaches) {
       _requestSurfCard(datum);
     });
 
+  $(searchBox).on('focus', function(){
+    $(this).val('');
+  });
+
   $(window).keydown(function(e) {
-    let isVisible = $('.search-container').css('display');
+    let isVisible = $(searchContainer).css('display');
     if (e.keyCode === 32 && isVisible === 'none') {
-      $('.search-container').show();
-      $('.tt-input').focus();
+      $(searchContainer).show();
+      $(searchBox).focus().val('');
     } else if (e.keyCode === 27 && isVisible !== 'none') {
-      $('.search-container').hide();
+      $(searchContainer).hide();
+      $(searchBox).val('');
     }
   });
 

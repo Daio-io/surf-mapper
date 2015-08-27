@@ -52,6 +52,7 @@ function _createInfoWindow(data){
     'closeclick', function() {
       _clearCurrentMarkers();
       $('.search-container').show();
+      $('#search-box').focus().val('');
     });
   
   return infowindow;
