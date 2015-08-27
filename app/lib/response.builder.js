@@ -13,9 +13,11 @@ module.exports = {
 
     let cached = cardCache.getCachedCard(spotid);
     if (tooly.existy(cached)) {
+      
       return new Promise(function(resolve) {
         resolve(cached);
       })
+      
     } else {
       let promises = [locator.getLocation(spotid), surfdata.getSurfData(spotid)];
 
@@ -31,13 +33,14 @@ module.exports = {
           lat: locator[0].latitude,
           lng: locator[0].longitude
         };
-        
+
         cardCache.cacheCard(spotid, res);
         return res;
 
       })
     }
   }
+  
 };
 
 function _mapData(data) {
