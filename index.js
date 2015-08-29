@@ -24,3 +24,4 @@ server.listen(settings.port, function() {
 got('http://beach-locator.herokuapp.com/status');
 got('http://beach-suggest.herokuapp.com/status');
 got('http://surf-query.herokuapp.com/status');
+got('http://surf-cams.herokuapp.com/status');

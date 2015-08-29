@@ -2,6 +2,7 @@
 
 const locator = require('./locator.client');
 const surfdata = require('./surfdata.client');
+const webcamClient = require('./cams.client');
 const surfcards = require('surfcards');
 const tooly = require('tooly');
 const cardCache = require('./card.cache');
@@ -13,19 +14,22 @@ module.exports = {
 
     let cached = cardCache.getCachedCard(spotid);
     if (tooly.existy(cached)) {
-      
+
       return new Promise(function(resolve) {
         resolve(cached);
       })
-      
+
     } else {
-      let promises = [locator.getLocation(spotid), surfdata.getSurfData(spotid)];
+      let promises = [ locator.getLocation(spotid),
+        surfdata.getSurfData(spotid),
+        webcamClient.getWebcam(spotid) ];
 
       return Promise.all(promises).then(function(response) {
         let mapped = response.map(_mapData);
         let locator = mapped[0];
         let surfData = mapped[1];
-        let cardData = _buildCardData(locator, surfData);
+        let webcam = mapped[2];
+        let cardData = _buildCardData(locator, surfData, webcam);
         let surfCard = surfcards.build(cardData);
 
         let res = {
@@ -40,19 +44,23 @@ module.exports = {
       })
     }
   }
-  
+
 };
 
 function _mapData(data) {
   return JSON.parse(data);
 }
 
-function _buildCardData(_locator, _surfData) {
+function _buildCardData(_locator, _surfData, _webcam) {
 
+  let webcamLink = _webcam['status'] === 'success' 
+    ? _webcam.response.Webcam 
+    : null;
+ 
   let data = {
     location: _locator[0].location,
     subheader: _surfData[0].date,
-    webcamLink: _locator[0].webcam || null,
+    webcamLink: webcamLink,
     swell: [],
     time: [],
     windspeed: []
