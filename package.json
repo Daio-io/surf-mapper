@@ -4,7 +4,7 @@
   "description": "Surf locations and Data Map",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp"
+    "postinstall": "gulp && gulp dist"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "node-cache": "^3.0.0",
     "surfcards": "https://github.com/Daveloper87/surfcards.git",
     "tooly": "https://github.com/Daveloper87/tooly.git",
+    "uglify-loader": "^1.2.0",
     "webpack": "^1.10.5",
     "webpack-stream": "^2.1.0"
   }
