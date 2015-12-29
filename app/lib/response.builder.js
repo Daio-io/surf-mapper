@@ -59,7 +59,7 @@ function _buildCardData(_locator, _surfData, _webcam) {
  
   let data = {
     location: _locator[0].location,
-    subheader: _surfData[0].date,
+    subheader: '',
     webcamLink: webcamLink,
     swell: [],
     time: [],
@@ -68,6 +68,7 @@ function _buildCardData(_locator, _surfData, _webcam) {
 
   if (_surfData['status'] === 'success') {
     let surfData = _surfData['response'];
+    data.subheader = surfData[0].date;
     for (let i = 0; i < 6; i++) {
       data.swell.push(surfData[i].minSwell + '-' + surfData[i].maxSwell);
       data.time.push(surfData[i].time);
