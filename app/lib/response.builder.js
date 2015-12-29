@@ -66,10 +66,14 @@ function _buildCardData(_locator, _surfData, _webcam) {
     windspeed: []
   };
 
-  for (let i = 0; i < 6; i++) {
-    data.swell.push(_surfData[i].minSwell + '-' + _surfData[i].maxSwell);
-    data.time.push(_surfData[i].time);
-    data.windspeed.push(_surfData[i].wind);
+  if (_surfData['status'] === 'success') {
+    let surfData = _surfData['response'];
+    for (let i = 0; i < 6; i++) {
+      data.swell.push(surfData[i].minSwell + '-' + surfData[i].maxSwell);
+      data.time.push(surfData[i].time);
+      data.windspeed.push(surfData[i].wind);
+    }
   }
+
   return data;
 }
