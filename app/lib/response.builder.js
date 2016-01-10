@@ -34,8 +34,8 @@ module.exports = {
 
         let res = {
           surfcard: surfCard,
-          lat: locator[0].latitude,
-          lng: locator[0].longitude
+          lat: locator[0].coords.lat,
+          lng: locator[0].coords.long
         };
 
         cardCache.cacheCard(spotid, res);

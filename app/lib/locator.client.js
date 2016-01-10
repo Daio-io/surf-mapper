@@ -13,7 +13,7 @@ module.exports = {
     
     return got('http://beach-locator.herokuapp.com/location/' + spotid)
       .then(function(data){
-      return data.body;
+      return data.body.response;
     });
 
   }
