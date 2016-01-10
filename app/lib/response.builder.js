@@ -27,7 +27,6 @@ module.exports = {
       return Promise.all(promises).then(function(response) {
         let mapped = response.map(_mapData);
         let locator = mapped[0].response;
-        console.log(locator);
         let surfData = mapped[1];
         let webcam = mapped[2];
         let cardData = _buildCardData(locator, surfData, webcam);
