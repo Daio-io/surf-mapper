@@ -70,9 +70,9 @@ function _buildCardData(_locator, _surfData, _webcam) {
     let surfData = _surfData['response'];
     data.subheader = surfData[0].date;
     for (let i = 0; i < 6; i++) {
-      data.swell.push(surfData[i].minSwell + '-' + surfData[i].maxSwell);
+      data.swell.push(surfData[i].swell.minSwell + '-' + surfData[i].swell.maxSwell);
       data.time.push(surfData[i].time);
-      data.windspeed.push(surfData[i].wind);
+      data.windspeed.push(surfData[i].weather.wind);
     }
   }
 
